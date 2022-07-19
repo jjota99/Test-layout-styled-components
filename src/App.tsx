@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {GlobalStyle} from './styles/global'
+import { Template } from "./components/template";
+import { WarningModal } from "./components/warningModal";
 
 function App() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [typeText, setTypeText] = useState(0);
+
+    function handleOpenModal() {
+        setIsOpen(true);
+    };
+
+    function handleCloseModal() {
+        setIsOpen(false);
+    };
+
+    function handleSetTypeFirstText() {
+        setTypeText(0);
+    };
+
+    function handleSetTypeSecondText() {
+        setTypeText(1);
+    };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <Template
+            onRequestOpen={handleOpenModal}
+            setTypeFirstText={handleSetTypeFirstText}
+            setTypeSecondText={handleSetTypeSecondText}
+        />
+        <WarningModal
+            isOpen={isOpen}
+            onRequestClose={handleCloseModal}
+            typeText={typeText}/>
+        <GlobalStyle/>
     </div>
   );
 }
