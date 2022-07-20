@@ -1,6 +1,8 @@
-### Iniciar instalação com comando   ## yarn install
+### Iniciar instalação com comando
+## yarn install
 
-### Depois de todas as dependencias serem instaladas, iniciar a aplicação com   ## yarn start
+### Depois de todas as dependencias serem instaladas, iniciar a aplicação com   
+## yarn start
 
 ### Tendo um fluxo bem basico e tendo 2 ações adicionais, fora a animação no texto principal, ao clicar nos botões se tem ações diferentes.
 
