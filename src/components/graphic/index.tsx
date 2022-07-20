@@ -5,7 +5,7 @@ import {api} from "../../services/api";
 export const Graphic = () => {
     const [analytics, setAnalytics] = useState([]);
     const keysData = ['hipertensos', 'diabeticos'];
-    const keysColor = ['#ea4739', '#38bcb2'];
+    const keysColor = ['#ffcf27', '#2ABC41'];
 
     useEffect(() => {
         api.get('analytics').then(response => setAnalytics(response.data))
