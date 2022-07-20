@@ -24,17 +24,17 @@ export const GlobalStyle = createGlobalStyle`
 
   .react-modal-content {
     width: 100%;
-    max-width: 576px;
+    max-width: 1000px;
     background: #fff;
-    padding: 3rem;
+    padding: 20px;
     position: relative;
     border-radius: 0.5rem;
   }
 
   .react-modal-close {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 5px;
+    top: 5px;
     border: 0;
     background: transparent;
     cursor: pointer;

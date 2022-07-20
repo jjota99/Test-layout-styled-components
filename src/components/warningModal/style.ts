@@ -3,21 +3,23 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 30px;
     border-radius: 20px;
   
-  img {
-    width: 100px;
-    height: 100px;
-  }
-  
-  span {
-    color: #2EB280;
-    font-size: 18px;
-    margin-top: 30px;
- 
+  header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 10px;
+    
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+    }
+
+    span {
+      font-size: 20px;
+    }
   }
 `;

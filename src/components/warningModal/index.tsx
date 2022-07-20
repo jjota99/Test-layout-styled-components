@@ -1,19 +1,17 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Modal from "react-modal";
 import { Container } from './style'
-import warningImg from '../../assets/iconModal.svg'
+import {Graphic} from "../graphic";
+import warningImg from '../../assets/iconAnalytics.svg'
 import closeImg from '../../assets/close.svg'
 
+
 interface WarningModalProps {
-    typeText: number;
     isOpen: boolean;
     onRequestClose: () => void,
 }
 
-export const WarningModal = ({typeText, isOpen, onRequestClose}: WarningModalProps) => {
-    const firstText = 'A análise do seu município está indisponível.'
-    const secondText = 'Informações sobre consultoria gratuita indisponíveis no momento.'
-
+export const WarningModal = ({ isOpen, onRequestClose}: WarningModalProps) => {
     return (
         <Modal isOpen={isOpen}
                onRequestClose={onRequestClose}
@@ -28,8 +26,15 @@ export const WarningModal = ({typeText, isOpen, onRequestClose}: WarningModalPro
                 <img src={closeImg} alt="fechar modal"/>
             </button>
             <Container>
-                <img src={warningImg}/>
-                <span>{typeText < 1 ? firstText : secondText}</span>
+                <header>
+                    <img src={warningImg}/>
+                    <span style={{ fontWeight: '500', color: '#3A3A42', fontSize: 18 }}>
+                    Analise do quadro de hipertensos e diabéticos por quadrimestre
+                </span>
+                </header>
+                <div>
+                    <Graphic />
+                </div>
             </Container>
         </Modal>
     )

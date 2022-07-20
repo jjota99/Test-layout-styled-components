@@ -1,13 +1,15 @@
 import React from 'react';
 import { Container } from './style';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface TemplateProps {
-    setTypeFirstText: () => void;
-    setTypeSecondText: () => void;
     onRequestOpen: () => void;
 }
 
-export const Template = ({setTypeFirstText, setTypeSecondText, onRequestOpen}: TemplateProps) => {
+export const Template = ({onRequestOpen}: TemplateProps) => {
+    const notify = () => toast("Descrição de consultoria indisponível no momento");
+
     return (
         <Container>
             <div className="Text-larger">
@@ -25,16 +27,12 @@ export const Template = ({setTypeFirstText, setTypeSecondText, onRequestOpen}: T
                     className="highlight-button"
                     onClick={() => {
                         onRequestOpen();
-                        setTypeFirstText();
                     }}
-
                 >
                     VER A ANÁLISE DO SEU MUNICÍPIO
                 </button>
-                <button onClick={() => {
-                    onRequestOpen();
-                    setTypeSecondText();
-                }}>CONHEÇA A CONSULTORIA GRATUITA</button>
+
+                <button onClick={notify}>CONHEÇA A CONSULTORIA GRATUITA</button>
             </div>
         </Container>
     )
