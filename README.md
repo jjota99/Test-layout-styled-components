@@ -4,7 +4,7 @@
 ### Depois de todas as dependencias serem instaladas, iniciar a aplicação com   
 ## yarn start
 
-## Tecnologias utilizadas
+### Tecnologias utilizadas
  
  ### TypeScript
   linguagem base do projeto.
