@@ -3,7 +3,6 @@ import { Container } from './style';
 import { toast } from 'react-toastify';
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import {GlobalStyle} from '../../styles/global'
 import {useNavigate} from "react-router-dom";
 
 
@@ -38,7 +37,6 @@ export const Template = () => {
                 <button onClick={notify}>CONHEÇA A CONSULTORIA GRATUITA</button>
             </div>
             <ToastContainer/>
-            <GlobalStyle/>
         </Container>
     )
 }

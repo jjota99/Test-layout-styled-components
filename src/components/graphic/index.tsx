@@ -3,7 +3,6 @@ import { ResponsiveBar } from '@nivo/bar';
 import { api } from "../../services/api";
 import graphicHeaderSvg from '../../assets/iconAnalytics.svg'
 import {Container} from "./style";
-import {GlobalStyle} from '../../styles/global';
 
 
 export const Graphic = () => {
@@ -55,7 +54,6 @@ export const Graphic = () => {
                     ],
                 }]}
        />
-            <GlobalStyle/>
         </Container>
     )
 }
