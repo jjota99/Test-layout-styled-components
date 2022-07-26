@@ -1,25 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 20px;
+    height: 60vh;
   
   header {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    padding-left: 10px;
+    padding: 40px 0 50px 90px;
     
     img {
-      width: 40px;
-      height: 40px;
+      height: 70px;
+      width: 70px;
       margin-right: 20px;
-    }
-
-    span {
-      font-size: 20px;
     }
   }
 `;

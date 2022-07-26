@@ -1,34 +1,19 @@
-import React, {useState} from 'react';
-import {GlobalStyle} from './styles/global'
+import React from 'react';
 import { Template } from "./components/template";
-import { WarningModal } from "./components/warningModal";
-import {ToastContainer} from "react-toastify";
+import { Graphic } from "./components/graphic";
 
-function App() {
-    const [isOpen, setIsOpen] = useState(false);
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
+export interface ApplicationProps {}
 
-    function handleOpenModal() {
-        setIsOpen(true);
-    };
-
-    function handleCloseModal() {
-        setIsOpen(false);
-    };
-
-
+const App: React.FunctionComponent<ApplicationProps> = (props) => {
   return (
-    <div className="App">
-        <Template
-            onRequestOpen={handleOpenModal}
-        />
-        <WarningModal
-            isOpen={isOpen}
-            onRequestClose={handleCloseModal}
-        />
-        <GlobalStyle/>
-        <ToastContainer />
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Template />}/>
+            <Route path="/analytics" element={<Graphic />}/>
+        </Routes>
+    </BrowserRouter>
   );
 }
 

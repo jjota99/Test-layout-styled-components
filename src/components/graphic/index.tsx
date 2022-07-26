@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { ResponsiveBar } from '@nivo/bar';
-import {api} from "../../services/api";
+import { api } from "../../services/api";
+import graphicHeaderSvg from '../../assets/iconAnalytics.svg'
+import {Container} from "./style";
+import {GlobalStyle} from '../../styles/global';
+
 
 export const Graphic = () => {
     const [analytics, setAnalytics] = useState([]);
@@ -12,7 +16,11 @@ export const Graphic = () => {
     }, [])
 
     return (
-        <div style={{ height: 400 }}>
+        <Container>
+            <header>
+                <img src={graphicHeaderSvg}/>
+                <h2>Gráfico demonstrativo - Analise do número de hipertensos e diabéticos por quadrimestre</h2>
+            </header>
             <ResponsiveBar
                 data={analytics}
                 margin={{top: 30, right: 110, bottom: 80, left: 120}}
@@ -47,6 +55,7 @@ export const Graphic = () => {
                     ],
                 }]}
        />
-        </div>
+            <GlobalStyle/>
+        </Container>
     )
 }

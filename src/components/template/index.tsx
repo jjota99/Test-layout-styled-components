@@ -1,14 +1,19 @@
 import React from 'react';
 import { Container } from './style';
 import { toast } from 'react-toastify';
+import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {GlobalStyle} from '../../styles/global'
+import {useNavigate} from "react-router-dom";
 
-interface TemplateProps {
-    onRequestOpen: () => void;
-}
 
-export const Template = ({onRequestOpen}: TemplateProps) => {
-    const notify = () => toast("Descrição de consultoria indisponível no momento");
+export const Template = () => {
+    const notify = () => toast('Informações de consultoria indisponiveis')
+    const navigate = useNavigate();
+    const routeNavigate = () => {
+        const path = 'analytics';
+        navigate(path)
+    };
 
     return (
         <Container>
@@ -25,15 +30,15 @@ export const Template = ({onRequestOpen}: TemplateProps) => {
             <div className="Buttons">
                 <button
                     className="highlight-button"
-                    onClick={() => {
-                        onRequestOpen();
-                    }}
+                    onClick={routeNavigate}
                 >
                     VER A ANÁLISE DO SEU MUNICÍPIO
                 </button>
 
                 <button onClick={notify}>CONHEÇA A CONSULTORIA GRATUITA</button>
             </div>
+            <ToastContainer/>
+            <GlobalStyle/>
         </Container>
     )
 }
