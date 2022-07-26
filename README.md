@@ -23,6 +23,3 @@
  
  ### toastify
    exibição de mensagem de aviso via toast.
- 
- ### react-modal 
- criação e funcionalidades embarcadas no modal.
